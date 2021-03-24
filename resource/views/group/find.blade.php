@@ -129,7 +129,7 @@
       $("#LAY_page").css("display", "block");
       var keyword = data.field.keyword;
 
-      postRequest(group_search, {keyword: keyword, page: 1, size: 20}, function (data) {
+      getRequest(group_search, {keyword: keyword, page: 1, size: 20}, function (data) {
         laypage.render({
           elem: 'LAY_page'
           , count: data.count
@@ -144,7 +144,7 @@
               return false;
             }
             let page = obj.curr;
-            postRequest(group_search, {keyword: keyword, page: page, size: 20}, function (data) {
+            getRequest(group_search, {keyword: keyword, page: page, size: 20}, function (data) {
               rendering(data.list)
             });
           }

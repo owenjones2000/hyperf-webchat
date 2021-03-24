@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 /**
  * This file is part of Hyperf.
@@ -29,12 +30,16 @@ class VideoTask
      */
     public function createFriendVideo(int $userId, ?int $fromFd, ?int $toFd, string $formUserName, string $toUserName)
     {
-        $result = wsSuccess(WsMessage::WS_MESSAGE_CMD_EVENT, WsMessage::EVENT_FRIEND_VIDEO_ROOM, [
-            'roomId'       => md5((string)$userId),
-            'userId'       => $userId,
-            'fromUserName' => $formUserName,
-            'toUserName'   => $toUserName
-        ]);
+        $result = wsSuccess(
+            WsMessage::WS_MESSAGE_CMD_EVENT,
+            WsMessage::EVENT_FRIEND_VIDEO_ROOM,
+            [
+                'roomId'       => md5((string)$userId),
+                'userId'       => $userId,
+                'fromUserName' => $formUserName,
+                'toUserName'   => $toUserName
+            ]
+        );
         $sender = make(Sender::class);
         $sender->push((int)$fromFd, $result);
         $sender->push((int)$toFd, $result);

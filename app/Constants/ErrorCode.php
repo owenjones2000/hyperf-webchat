@@ -99,4 +99,9 @@ class ErrorCode extends AbstractConstants
         self::CONFIG_NOT_FOUND      => 'Configuration not found !',
         self::FILE_DOES_NOT_EXIST   => 'File does not exist !'
     ];
+
+    public static function getMessage($code)
+    {
+        return self::$errorMessages[$code];
+    }
 }

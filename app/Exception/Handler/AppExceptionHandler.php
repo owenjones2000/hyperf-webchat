@@ -38,7 +38,8 @@ class AppExceptionHandler extends ExceptionHandler
         RuntimeLog::error($throwable->getTraceAsString());
         $data = Json::encode([
             'code' => -1,
-            'msg'  => '服务端异常!'
+            // 'msg'  => '服务端异常!'
+            'msg'  => $throwable->getMessage()
         ], JSON_UNESCAPED_UNICODE);
         $this->stopPropagation();
         return $response->withStatus(200)

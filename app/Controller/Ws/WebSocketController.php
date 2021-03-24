@@ -68,6 +68,10 @@ class WebSocketController extends AbstractController implements OnMessageInterfa
         $dispatched = make(Dispatched::class, [
             $dispatcher->dispatch('GET', sprintf('/%s/%s', $controller, $method))
         ]);
+        // dump($dispatcher);
+        // dump($dispatcher->dispatch('GET', sprintf('/%s/%s', $controller, $method)));
+        // dump($dispatched);
+        // dump($dispatched->handler->callback);
         if ($dispatched->isFound()) {
             //路由处理
             $result = call_user_func([
