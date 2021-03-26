@@ -37,8 +37,7 @@
 - 断线重连
 - 发送图片及文件
 
-1.1
-- webrtc(视频聊天)
+
 
 ## Requirement
 
@@ -128,27 +127,6 @@ server{
 ```bash
 php bin/hyperf.php start
 ```
-
-
-## 打赏(你的支持是我最大的动力,下个版本重大升级中)
-
-
-<p align="center">
-    <a href="https://github.com/codingheping/hyperf-chat" target="_blank">
-        <img src="https://static.jayjay.cn/pay.jpeg"/>
-    </a>
-</p>
-
-
-## 联系方式
-
-- WeChat：naicha_1994
-- QQ：847050412
-- QQ群:658446650
-
-## hyperf-chat升级版欢迎star
-[hyperf-chat升级版](https://github.com/codingheping/hyperf-chat-upgrade)
-
 ## License
 
 [LICENSE](LICENSE)
