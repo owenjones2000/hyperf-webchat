@@ -70,7 +70,7 @@ class AuthMiddleware implements MiddlewareInterface
             if (strlen($token) > 0 && $this->jwt->checkToken($token)) {
                 $isValidToken = true;
             }
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             return $response
                 ->withStatus(self::HANDLE_BAD_REQUEST_CODE);
         }
